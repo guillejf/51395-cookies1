@@ -1,0 +1,28 @@
+<h1>Listado de usuarios</h1>
+
+{{#each usuariosPaginados}}
+  <p>
+    {{this._id}}
+    {{this.firstName}}
+    {{this.lastName}}
+    {{this.email}}
+  </p>
+{{/each}}
+
+<h3>paginacion</h3>
+<p>
+  {{!-- totalDocs:
+  {{totalDocs}}
+  limit:
+  {{limit}} --}}
+  {{#if hasPrevPage}}
+    <a style='text-decoration: none;' href='/html/users?querypage={{prevPage}}'>⬅️{{prevPage}}</a>
+  {{/if}}
+  pagina
+  {{page}}
+  de
+  {{totalPages}}
+  {{#if hasNextPage}}
+    <a style='text-decoration: none;' href='/html/users?querypage={{nextPage}}'>{{nextPage}}➡️</a>
+  {{/if}}
+</p>

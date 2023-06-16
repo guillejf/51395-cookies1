@@ -1,0 +1,27 @@
+<div>
+  {{#each usuarios}}
+    <p>{{this.id}} {{this.firstName}} {{this.email}}</p>
+  {{/each}}
+  <hr />
+  <hr />
+  pagingCounte:
+  {{pagingCounter}}
+  totalPage:
+  {{totalPages}}
+
+  <hr />
+
+  {{#if hasPrevPage}}
+    <a style='text-decoration: none' href='http://localhost:8000/users?page={{prevPage}}'> ⬅️ </a>
+  {{/if}}
+  {{page}}
+  {{#if hasNextPage}}
+    <a style='text-decoration: none' href='http://localhost:8000/users?page={{nextPage}}'> ➡️</a>
+  {{/if}}
+
+  <hr />
+  <hr />
+  {{!-- {{#each links}}
+    <a href='{{this.href}}'>{{this.label}}</a>
+  {{/each}} --}}
+</div>
